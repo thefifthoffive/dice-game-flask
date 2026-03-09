@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Game</title>
+</head>
+<body>
+
+    <!-- main heading on the page -->
+    <h1>Dice Game</h1>
+
+    <!-- show the current game status -->
+    <h3>Game Status</h3>
+
+    <!-- display the current turn number -->
+    <p><b>Turn:</b> {{ turn }}</p>
+
+    <!-- display the current point number -->
+    <p><b>Point:</b> {{ point }}</p>
+
+    <!-- form for typing in a roll number -->
+    <form method="POST">
+        <!-- input box where the user types a number -->
+        <input type="number" name="roll" min="2" max="12">
+
+        <!-- button to submit the typed number -->
+        <button type="submit">Roll Dice</button>
+    </form>
+
+    <!-- form for generating a random roll -->
+    <form method="POST">
+        <!-- this button sends the value "random" to app.py -->
+        <button name="roll" value="random">Random Roll</button>
+    </form>
+
+    <!-- form for starting over -->
+    <form method="POST">
+        <!-- this button sends the value "reset" to app.py -->
+        <button name="roll" value="reset">Start New Game</button>
+    </form>
+
+    <!-- section that shows the latest result -->
+    <h3>Result</h3>
+
+    <!-- display the message sent from Flask -->
+    <p>{{ message }}</p>
+
+</body>
+</html>
